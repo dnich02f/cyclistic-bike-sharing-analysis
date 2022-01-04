@@ -1,8 +1,7 @@
-Untangling strings (\#@%\*!!)
+Data Analysis | Bike Sharing Company in Chicago, IL
 ================
-Erika Duan
-2022-01-02
-
+Darryl Nichols
+2022-01-03
 -   [Case Study](#The-Case-Study-Scenario-as-provided-by-Google/Coursera)
 -   [Creating a test dataset](#creating-a-test-dataset)
 -   [Introduction to regular
