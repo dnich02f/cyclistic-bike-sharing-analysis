@@ -3,7 +3,7 @@ Untangling strings (\#@%\*!!)
 Erika Duan
 2022-01-02
 
--   [Case Study](#The Case Study Scenario as provided by Google/Coursera)
+-   [Case Study](#The-Case-Study-Scenario-as-provided-by-Google/Coursera)
 -   [Creating a test dataset](#creating-a-test-dataset)
 -   [Introduction to regular
     expressions](#introduction-to-regular-expressions)
