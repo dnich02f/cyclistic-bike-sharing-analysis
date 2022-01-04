@@ -3,7 +3,7 @@ Untangling strings (\#@%\*!!)
 Erika Duan
 2022-01-02
 
--   [Introduction](#introduction)
+-   [Case Study](##The Case Study Scenario as provided by Google/Coursera)
 -   [Creating a test dataset](#creating-a-test-dataset)
 -   [Introduction to regular
     expressions](#introduction-to-regular-expressions)
@@ -22,69 +22,6 @@ Erika Duan
     functions](#differences-between-base-r-and-stringr-functions)
 -   [Other resources](#other-resources)
 
-# Introduction
-
-Comment fields sit somewhere in between tidy tabular data entries and
-large text files (i.e. documents) in terms of wrangling effort. They
-require human naunce to decode and the quality and completeness of
-comments vary between individual entries.
-
-This makes it hard to gauge whether cleaning comment fields is a
-worthwhile endeavour (especially when you have multiple other data
-sources that need examining). Luckily, some knowledge of string
-manipulations and regular expressions can help simplify this process.
-
-# Creating a test dataset
-
-Let’s imagine that my local chocolate company, [Haighs
-Chocolates](https://www.haighschocolates.com.au), wants to understand
-what food critics versus Haighs fans think about their newest product.
-They send out a bag of free samples with a link to an online survey that
-asks individuals to rate their chocolates (on a scale of 1 to 10) and
-provide additional comments.
-
-**Note:** The code used to create this dataset can be accessed from the
-`Rmd` file accompanying this tutorial.
-
-``` r
-#-----quickly visualise the test dataset-----  
-survey %>%
-  head(10) # fields containing html flags are not properly rendered by kable 
-```
-
-# Introduction to regular expressions
-
-Regular expressions, or regex, can be thought of as a separate syntax
-for handling patterns in strings. In R, regular expressions can be
-directly enclosed inside quotes like character strings or explicitly
-referenced inside `regex()`. For convenience, I prefer the former
-approach but the latter approach can help increase code readability.
-
-``` r
-#-----call regular expressions in R-----
-many_apples <- c("Apple", "apple", "APPLE", "apples")
-
-str_extract(many_apples, 
-            "apples?")  
-#> [1] NA       "apple"  NA       "apples"
-
-#-----call regular expressions in R using regex()-----
-# regex() provides additional arguments
-
-str_extract(many_apples, 
-            regex("apples?", ignore_case = T))  
-#> [1] "Apple"  "apple"  "APPLE"  "apples"
-
-# regex() also allows comments to improve regex readability  
-
-str_extract(many_apples, 
-            regex("
-                  apple  # contains the word apple
-                  s?  # contains zero or one of the letter s
-                  " , comments = T))
-#> [1] NA       "apple"  NA       "apples"    
-```
----
 
 ## The Case Study Scenario as provided by Google/Coursera
 
